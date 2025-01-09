@@ -29,6 +29,53 @@ public class CustomerController
     model.doCheck(pn);
   }
 
+  public void doNameCheck(String name)
+  {
+    String sanitisedName = name.toLowerCase();
+    sanitisedName = sanitisedName.replaceAll("\\s+", "");
+
+    String id;
+
+    switch (sanitisedName) 
+    {
+      case "tv":
+        id = "0001";
+        break;
+
+      case "radio":
+        id = "0002";
+        break;
+
+      case "toaster":
+        id = "0003";
+        break;
+
+      case "watch":
+        id = "0004";
+        break;
+
+      case "camera":
+        id = "0005";
+        break;
+
+      case "musicplayer":
+        id = "0006";
+        break;
+
+      case "usbdriver":
+        id = "0007";
+        break;
+    
+      default:
+        id="0000";
+        break;
+    }
+
+
+
+    model.doCheck(id);
+  }
+
   /**
    * Clear interaction from view
    */

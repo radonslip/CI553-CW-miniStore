@@ -68,7 +68,7 @@ public class CustomerView implements Observer
 
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check button
     theBtCheck.addActionListener(                   // Call back code
-      e -> cont.doCheck( theInput.getText() ) );
+      e -> cont.doNameCheck( theInput.getText() ) );
     cp.add( theBtCheck );                           //  Add to canvas
 
     theBtClear.setBounds( 16, 25+60*1, 80, 40 );    // Clear button
