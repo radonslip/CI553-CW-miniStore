@@ -17,6 +17,10 @@ import middle.MiddleFactory;
 import javax.swing.*;
 import java.awt.*;
 
+import clients.returns.ReturnController;
+import clients.returns.ReturnModel;
+import clients.returns.ReturnView;
+
 /**
  * Starts all the clients (user interface)  as a single application.
  * Good for testing the system using a single application.
@@ -45,6 +49,7 @@ class Main
     //startCashierGUI_MVC( mlf ); // you can create multiple clients
     startPackingGUI_MVC( mlf );
     startBackDoorGUI_MVC( mlf );
+    startReturnGUI_MVC(mlf);
   }
   
   /**
@@ -125,6 +130,22 @@ class Main
     BackDoorModel model      = new BackDoorModel(mlf);
     BackDoorView view        = new BackDoorView( window, mlf, pos.width, pos.height );
     BackDoorController cont  = new BackDoorController( model, view );
+    view.setController( cont );
+
+    model.addObserver( view );       // Add observer to the model
+    window.setVisible(true);         // Make window visible
+  }
+
+  public void startReturnGUI_MVC(MiddleFactory mlf )
+  {
+    JFrame  window = new JFrame();
+    window.setTitle( "Return Client MVC");
+    window.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+    Dimension pos = PosOnScrn.getPos();
+    
+    ReturnModel model      = new ReturnModel(mlf);
+    ReturnView view        = new ReturnView( window, mlf, pos.width, pos.height );
+    ReturnController cont  = new ReturnController( model, view );
     view.setController( cont );
 
     model.addObserver( view );       // Add observer to the model
