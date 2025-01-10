@@ -96,6 +96,11 @@ public class CustomerView implements Observer
     
     rootWindow.setVisible( true );                  // Make visible);
     theInput.requestFocus();                        // Focus is here
+
+    // Style the Customer Client
+    cp.setBackground(Color.LIGHT_GRAY);
+    theBtCheck.setBackground(Color.CYAN);
+    theBtClear.setBackground(Color.CYAN);
   }
 
    /**

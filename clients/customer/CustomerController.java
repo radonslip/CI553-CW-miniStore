@@ -29,14 +29,21 @@ public class CustomerController
     model.doCheck(pn);
   }
 
+  /**
+   * Takes customers text search, sanitises it and searches for a corresponding ID before running that through a normal id check
+   * @param name The unsanitised user input
+   */
+
   public void doNameCheck(String name)
   {
-    String sanitisedName = name.toLowerCase();
-    sanitisedName = sanitisedName.replaceAll("\\s+", "");
+    // Sanitize the entered name
+    String sanitizedName = name.toLowerCase();
+    sanitizedName = sanitizedName.replaceAll("\\s+", "");
 
     String id;
 
-    switch (sanitisedName) 
+    // Search for a corresponding id
+    switch (sanitizedName) 
     {
       case "tv":
         id = "0001";
@@ -71,8 +78,7 @@ public class CustomerController
         break;
     }
 
-
-
+    // Run a normal id check
     model.doCheck(id);
   }
 

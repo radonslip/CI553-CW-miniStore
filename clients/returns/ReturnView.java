@@ -27,7 +27,9 @@ public class ReturnView implements Observer
   private final JTextField  theInput   = new JTextField();
   private final JTextArea   theOutput  = new JTextArea();
   private final JScrollPane theSP      = new JScrollPane();
-  private final JButton     returnBut = new JButton(RETURN);
+
+  // Create a new button for returning items
+  private final JButton returnBut = new JButton(RETURN);
 
 
   private StockReadWriter theStock     = null;
@@ -64,10 +66,10 @@ public class ReturnView implements Observer
     pageTitle.setText( "Return a customers item" );                        
     cp.add( pageTitle );  
     
-    returnBut.setBounds( 16, 25+60*0, 80, 40 );    // Check Button
-    returnBut.addActionListener(                   // Call back code
-      e -> cont.doReturn( theInput.getText() ) );
-    cp.add( returnBut );                           //  Add to canvas
+    // Set the bounds of the return button, add its event listener and add it to the content pane
+    returnBut.setBounds( 16, 25+60*0, 80, 40 );
+    returnBut.addActionListener(e -> cont.doReturn( theInput.getText() ) );
+    cp.add( returnBut );
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
     theAction.setText( "" );                        // Blank
@@ -84,6 +86,10 @@ public class ReturnView implements Observer
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
     theInput.requestFocus();                        // Focus is here
+
+    // Style the Return Client
+    cp.setBackground(Color.LIGHT_GRAY);
+    returnBut.setBackground(Color.CYAN);
   }
 
   /**

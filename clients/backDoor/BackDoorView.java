@@ -98,6 +98,12 @@ public class BackDoorView implements Observer
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
     theInput.requestFocus();                        // Focus is here
+    
+    // Style the Customer Client
+    cp.setBackground(Color.LIGHT_GRAY);
+    theBtClear.setBackground(Color.CYAN);
+    theBtQuery.setBackground(Color.CYAN);
+    theBtRStock.setBackground(Color.CYAN);
   }
   
   public void setController( BackDoorController c )

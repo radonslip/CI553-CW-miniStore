@@ -96,6 +96,13 @@ public class CashierView implements Observer
     theSP.getViewport().add( theOutput );           //  In TextArea
     rootWindow.setVisible( true );                  // Make visible
     theInput.requestFocus();                        // Focus is here
+
+    // Style the Customer Client
+    cp.setBackground(Color.LIGHT_GRAY);
+    theBtCheck.setBackground(Color.CYAN);
+    theBtBought.setBackground(Color.CYAN);
+    theBtBuy.setBackground(Color.CYAN);
+    
   }
 
   /**

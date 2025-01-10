@@ -136,6 +136,11 @@ class Main
     window.setVisible(true);         // Make window visible
   }
 
+
+  /**
+   * Start a return client
+   * @param mlf
+   */
   public void startReturnGUI_MVC(MiddleFactory mlf )
   {
     JFrame  window = new JFrame();

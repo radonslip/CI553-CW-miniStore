@@ -2,7 +2,7 @@ package clients.returns;
 
 
 /**
- * The Cashier Controller
+ * The Return Controller
  */
 
 public class ReturnController
@@ -22,8 +22,8 @@ public class ReturnController
   }
 
   /**
-   * Check interaction from view
-   * @param pn The product number to be checked
+   * Return an item to the store
+   * @param pn The product number of the item to be returned
    */
   public void doReturn( String pn )
   {

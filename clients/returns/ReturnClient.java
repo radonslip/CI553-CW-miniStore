@@ -8,7 +8,7 @@ import middle.RemoteMiddleFactory;
 import javax.swing.*;
 
 /**
- * The standalone Cashier Client.
+ * The Return Client.
  */
 
 

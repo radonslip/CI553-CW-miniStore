@@ -51,31 +51,31 @@ public class ReturnModel extends Observable
   }
 
   /**
-   * Re stock 
-   * @param productNum The product number of the item
-   * @param quantity How many to be added
+   * Return an item to the store
+   * @param productNum The product number of the item to be returned to the store
    */
   public void doReturn(String productNum)
   {
+    // Setup
     String theAction = "";
     theBasket = makeBasket();
-    pn  = productNum.trim();                    // Product no.
-    String pn  = productNum.trim();             // Product no.
-    int amount = 1;
+    pn  = productNum.trim();
+    String pn  = productNum.trim(); 
+
     try
     {
-  
-      if ( theStock.exists( pn ) )              // Stock Exists?
-      {                                         // T
-        theStock.addStock(pn, amount);          //  Re stock
-        Product pr = theStock.getDetails(pn);   //  Get details
-        theBasket.add(pr);                      //
-        theAction = "";                         // Display 
-      } else {                                  // F
-        theAction =                             //  Inform Unknown
-          "Unknown product number " + pn;       //  product number
+      // If the id exists return the item to the store
+      if ( theStock.exists( pn ) )
+      {
+        theStock.addStock(pn, 1);
+        Product pr = theStock.getDetails(pn);
+        theBasket.add(pr);
+        theAction = "";
+      } else {
+        theAction =
+          "Unknown product number " + pn;
       } 
-    } catch( StockException e )
+    } catch( StockException e ) 
     {
       theAction = e.getMessage();
     }
